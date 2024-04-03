@@ -1,0 +1,45 @@
+<!-- 
+    <div class="container">
+        <h2>Order Summary</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for item in order_details %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>
+                        <input type="number" name="quantity[{{ item.name }}]" value="{{ item.quantity }}" min="1">
+                    </td>
+                    <td>Rs. {{ (item.price * item.quantity)|round(2) }}</td>
+                    <td>
+                        <a href="{{ url_for('remove_item', item=item.name) }}">Remove</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="text-right">Total:</td>
+                    <td>Rs. {{ total_price|round(2) }}</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="order-actions">
+            <a href="{{ url_for('menu') }}" class="btn">Add More Items</a>
+            <label for="parcel-option">Parcel Option:</label>
+            <input type="checkbox" id="parcel-option" name="parcel-option">
+            <button type="submit" class="btn">Place Order</button>
+        </div>
+    </div> -->
